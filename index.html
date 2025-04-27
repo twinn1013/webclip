@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국방모바일보안</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #212121;
+      background: url('./background.png') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .rotating-loading {
+      position: absolute;
+      top: 58.3%;
+      left: 50.2%;
+      width: 255px;
+      height: 255px;
+      transform: translate(-50%, -50%);
+      animation: rotate 3.5s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <img src="./loading_circle.png" class="rotating-loading">
+  </div>
+</body>
+</html>

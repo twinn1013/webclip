@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국방모바일보안</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #212121;
+      background: url('./background.png') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, "Noto Sans", sans-serif;
+    }
+    .rotating-loading {
+      position: absolute;
+      top: 58.3%;
+      left: 50.2%;
+      width: 255px;
+      height: 255px;
+      transform: translate(-50%, -50%);
+      animation: rotate 3.5s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    .timer {
+      position: absolute;
+      bottom: 6%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      line-height: 1.2;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <img src="./loading_circle.png" class="rotating-loading">
+    <div class="timer" id="timer">
+      0일<br>00:00:00
+    </div>
+  </div>
+
+  <script>
+    const startTime = new Date('2025-04-20T13:01:00').getTime();
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const diff = now - startTime;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      const formattedTime = 
+        `${days}일<br>` +
+        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+      document.getElementById('timer').innerHTML = formattedTime;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+</body>
+</html>

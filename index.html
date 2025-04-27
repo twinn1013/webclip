@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
+<html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>국방모바일보안</title>
@@ -16,7 +15,7 @@
       height: 100vh;
       overflow: hidden;
       position: relative;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, "Noto Sans", sans-serif;
+      font-family: "Apple SD Gothic Neo", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, "Noto Sans", sans-serif;
     }
     .rotating-loading {
       position: absolute;
@@ -33,22 +32,20 @@
     }
     .timer {
       position: absolute;
-      bottom: 6%;
+      bottom: 32.5%;
       left: 50%;
       transform: translateX(-50%);
-      color: white;
-      font-size: 20px;
+      color: #d5d3d6;
+      font-size: 19px;
       text-align: center;
-      line-height: 1.2;
+      line-height: 1.0;
     }
   </style>
 </head>
 <body>
   <div class="background">
     <img src="./loading_circle.png" class="rotating-loading">
-    <div class="timer" id="timer">
-      0일<br>00:00:00
-    </div>
+    <div class="timer" id="timer">7일<br>06:26:30</div>
   </div>
 
   <script>
@@ -73,5 +70,5 @@
     setInterval(updateTimer, 1000);
     updateTimer();
   </script>
-</body>
-</html>
+
+</body></html>
